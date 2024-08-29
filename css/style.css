@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --font-family-primary: 'Poppins', sans-serif;
+    --color-primary: #007bff;
+    --color-secondary: #b65555;
+    --pico-group-box-shadow: 0 !important;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+header {
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & button {
+        min-width: 250px !important;
+    }
+
+    & input[aria-invalid="true"] {
+        border-color: var(--color-secondary) !important;
+    }
+}
+
+#message {
+    color: var(--color-secondary) !important;
+}
+
+[role=group]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus), [role=search]:has(button:focus,[type=submit]:focus,[type=button]:focus,[role=button]:focus) {
+    --pico-group-box-shadow-focus-with-button: 0 0 0 0 var(--color-primary) !important;
+    --pico-group-box-shadow: var(--pico-group-box-shadow-focus-with-button) !important;
+}
+

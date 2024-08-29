@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a simple IP search info page">
+    <meta name="keywords" content="IP, Search, Info">
+    <meta name="author" content="Gustavo S. Dos Santos">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>IP Search Info</title>
+
+    <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>IP Search Info</h1>
+        <p>This is a simple IP search info page</p>
+    </header>
+
+    <main>
+        <form>
+            <label for="ip">IP Address <small>(e.g. 192.168.1.1)</small></label>
+            <fieldset role="group">
+                <input type="text" placeholder="Enter IP address" required aria-invalid="false" id="ip"
+                    pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$">
+
+                <button aria-busy="false" id="submit"> Search Info </button>
+            </fieldset>
+            <small hidden id="message">Mensaje de error</small>
+        </form>
+
+        <div role="alert" aria-live="assertive">
+            <pre id="results" hidden>
+            </pre>
+        </div>
+
+        <div id="map" width="100%" height="400px">
+        </div>
+
+    </main>
+</body>
+
+</html>
